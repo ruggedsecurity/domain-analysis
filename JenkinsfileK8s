@@ -3,7 +3,10 @@ pipeline {
   stages {
     stage('Parse Input File') {
       steps {
-        echo 'Parsing Input'
+        script {
+          DOMAINS = readJSON file:'domains.json'
+          echo "domains: ${DOMAINS[]}"
+         }
       }
     }
   }
