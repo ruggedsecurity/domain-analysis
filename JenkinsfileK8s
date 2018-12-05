@@ -4,11 +4,12 @@ pipeline {
     stage('Parse Input File') {
       steps {
         script {
-          DOMAINS = readJSON file:'domains.json'
+          DOMAINS = parseDomains(readJSON file:'domains.json')
           echo "domains: ${DOMAINS}.domains"
           for (domain in DOMAINS) {
-          sh 'echo $domain'
-         }
+            sh 'echo $domain'
+          }
+        }
       }
     }
   }
