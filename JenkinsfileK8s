@@ -6,6 +6,8 @@ pipeline {
         script {
           DOMAINS = readJSON file:'domains.json'
           echo "domains: ${DOMAINS}.domains"
+          for (domain in DOMAINS) {
+          sh 'echo $domain'
          }
       }
     }
