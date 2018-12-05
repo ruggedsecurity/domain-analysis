@@ -5,7 +5,7 @@ pipeline {
       steps {
         script {
           DOMAINS = readJSON file:'domains.json'
-          echo "domains: ${DOMAINS}"
+          echo "domains: ${DOMAINS}.domains"
          }
       }
     }
