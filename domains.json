@@ -1,5 +1,4 @@
-{
-  "domains": [
+[
     {
       "name": "k8s.desigingdevops.com",
       "contact_email": "bmcconnell@cloudbees.com"
@@ -12,5 +11,5 @@
       "name": "gcp.designingdevops.com",
       "contact_email": "emcconne@gmail.com"
     }
-  ]
-}
+]
+
