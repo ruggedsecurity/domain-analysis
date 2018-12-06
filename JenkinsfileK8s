@@ -6,6 +6,10 @@ pipeline {
         script {
           DOMAINS = readJSON file: 'domains.json'
           echo "domains: ${DOMAINS}"
+          num_entries = DOMAINS.size()
+          for (i=0; i < num_entries; i++) {
+            echo DOMAINS[i].name
+          }
         }
       }
     }
