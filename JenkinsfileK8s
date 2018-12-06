@@ -32,19 +32,21 @@ pipeline {
     
     stage('Trigger Scans on Domains') {
       steps {
-        for (i=0; i < DOMAINS.size(); i++) {
-          echo DOMAINS[i].name
-          build(
-            job: 'WEB/ruggedsecurity/gauntlt-tests/master',
-            propagate: false,
-            parameters: [
-              [
-                  $class: 'StringParameterValue',
-                  name: 'HOST',
-                  value: DOMAINS[i].name
+        script {
+          for (i=0; i < DOMAINS.size(); i++) {
+            echo DOMAINS[i].name
+            build(
+              job: 'WEB/ruggedsecurity/gauntlt-tests/master',
+              propagate: false,
+              parameters: [
+                [
+                    $class: 'StringParameterValue',
+                    name: 'HOST',
+                    value: DOMAINS[i].name
+                ]
               ]
-            ]
-          )
+            )
+          }
         }
       }
     }
