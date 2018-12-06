@@ -35,7 +35,7 @@ pipeline {
         script {
           for (i=0; i < DOMAINS.size(); i++) {
             echo DOMAINS[i].name    
-            publishSecurityScanMessage(DOMAINS[i].name)
+            publishSecurityScan(DOMAINS[i].name)
           }
         }
       }
