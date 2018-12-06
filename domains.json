@@ -10,6 +10,10 @@
     {
       "name": "www.cloudbees.com",
       "contact_email": "emcconne@gmail.com"
+    },
+    {
+      "name": "go.cloudbees.com",
+      "contact_email": "emcconne@gmail.com"
     }
 ]
 
