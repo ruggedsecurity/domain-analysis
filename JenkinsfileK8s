@@ -25,6 +25,7 @@ pipeline {
         script {
           for (i=0; i < DOMAINS.size(); i++) {
             echo DOMAINS[i].name    
+            sleep 10
             publishSecurityScan(DOMAINS[i].name)
           }
         }
