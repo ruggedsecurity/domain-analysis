@@ -8,14 +8,14 @@ pipeline {
           for (i=0; i < DOMAINS.size(); i++) {
             echo DOMAINS[i].name
             build(
-                job: 'gauntlt_tests',
-                parameters: [
-                    [
-                        $class: 'StringParameterValue',
-                        name: 'MYLIST',
-                        value: MYLIST[element]
-                    ]
+              job: 'gauntlt_tests',
+              parameters: [
+                [
+                    $class: 'StringParameterValue',
+                    name: 'HOST',
+                    value: DOMAINS[i].name
                 ]
+              ]
             )
           }
         }
