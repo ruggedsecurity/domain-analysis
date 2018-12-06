@@ -30,6 +30,18 @@ pipeline {
        }
     }
     
+    stage('Publish Scan Message') {
+      steps {
+        script {
+          for (i=0; i < DOMAINS.size(); i++) {
+            echo DOMAINS[i].name    
+            publishSecurityScanMessage(DOMAINS[i].name)
+          }
+        }
+      }
+    }
+    
+    /* Comment out stage
     stage('Trigger Scans on Domains') {
       steps {
         script {
@@ -50,5 +62,6 @@ pipeline {
         }
       }
     }
+    */ End comment
   }
 }
