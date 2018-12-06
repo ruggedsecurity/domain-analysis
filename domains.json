@@ -1,15 +1,11 @@
 [
     {
-      "name": "k8s.desigingdevops.com",
+      "name": "k8s.designingdevops.com",
       "contact_email": "bmcconnell@cloudbees.com"
     },
     {
       "name": "cjp.designingdevops.com",
       "contact_email": "bmcconnell@cloudbees.com"
-    },
-    {
-      "name": "gcp.designingdevops.com",
-      "contact_email": "emcconne@gmail.com"
     },
     {
       "name": "www.cloudbees.com",
