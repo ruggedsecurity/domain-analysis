@@ -1,7 +1,15 @@
 {
-  "domains": [
-    "k8s.desigingdevops.com",
-    "cjp.designingdevops.com",
-    "gcp.designingdevops.com"
-    ]
+  "domains": 
+  {
+    "name": "k8s.desigingdevops.com",
+    "contact_email": "bmcconnell@cloudbees.com"
+  },
+  {
+    "name": "cjp.designingdevops.com",
+    "contact_email": "bmcconnell@cloudbees.com"
+  },
+  {
+    "name": "gcp.designingdevops.com",
+    "contact_email": "emcconne@gmail.com"
+  }
 }
