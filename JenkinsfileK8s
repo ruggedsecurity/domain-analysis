@@ -1,3 +1,11 @@
+library identifier: 'pipeline-library@master', retriever: modernSCM(
+    [$class: 'GitSCMSource', 
+    credentialsId: '', 
+    id: 'pipeline-library', 
+    remote: 'https://github.com/ruggedsecurity/pipeline-library.git', 
+    traits: [[$class: 'jenkins.plugins.git.traits.BranchDiscoveryTrait']]
+])
+
 pipeline {
   agent any
   triggers {
