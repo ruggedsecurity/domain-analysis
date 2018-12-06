@@ -9,6 +9,7 @@ pipeline {
             echo DOMAINS[i].name
             build(
               job: 'WEB/ruggedsecurity/gauntlt-tests/master',
+              propagate: false,
               parameters: [
                 [
                     $class: 'StringParameterValue',
