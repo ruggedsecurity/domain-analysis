@@ -1,10 +1,37 @@
 pipeline {
   agent any
+  triggers {
+    eventTrigger simpleMatch("hello world!")
+  }
   stages {
     stage('Parse Input File') {
       steps {
         script {
           DOMAINS = readJSON file: 'domains.json'
+        }
+      }
+    }
+    
+    stage('Determine Cause') {
+      steps {
+          echo "All causes of this build:" + currentBuild.getBuildCauses().toString()
+          echo "${currentBuild.getBuildCauses().size()}";
+          script {
+              echo currentBuild.getBuildCauses()[0]._class;
+          }
+          echo currentBuild.getBuildCauses("hudson.model.Cause").toString()
+
+          script {
+              if (currentBuild.getBuildCauses()[0]._class == "com.cloudbees.jenkins.plugins.pipeline.events.EventTriggerCause") {
+                  echo currentBuild.getBuildCauses()[0].event.toString()
+                  echo currentBuild.getBuildCauses()[0].event.source.toString()
+              }
+          }
+       }
+    }
+    
+    stage('Trigger Scans on Domains') {
+      steps {
           for (i=0; i < DOMAINS.size(); i++) {
             echo DOMAINS[i].name
             build(
