@@ -14,6 +14,10 @@
     {
       "name": "go.cloudbees.com",
       "contact_email": "emcconne@gmail.com"
+    },
+    {
+      "name": "k8s.designingdevops.com",
+      "contact_email": "emcconne@gmail.com"
     }
 ]
 
