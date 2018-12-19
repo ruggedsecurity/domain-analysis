@@ -8,9 +8,7 @@ library identifier: 'pipeline-library@master', retriever: modernSCM(
 
 pipeline {
   agent any
-  triggers {
-    eventTrigger simpleMatch("hello world!")
-  }
+
   stages {
     stage('Parse Input File') {
       steps {
