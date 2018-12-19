@@ -25,7 +25,8 @@ pipeline {
         script {
           for (i=0; i < DOMAINS.size(); i++) {
             echo DOMAINS[i].name    
-            sleep 10
+            // Add sleep so that quiet period doesn't combine triggers
+            sleep 10 
             publishSecurityScan(DOMAINS[i].name)
           }
         }
